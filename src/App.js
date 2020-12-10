@@ -9,6 +9,9 @@ function App() {
 
   }
 
+  const ChangeInputHandler = event => setName(event.target.value)
+
+  
   const buttonMark = (
     <div>
       
@@ -24,6 +27,7 @@ function App() {
         name={name} 
         title="Engineer"
         changeName={() => ChangeNameHandler("Avi")}
+        changeInput={ChangeInputHandler}
         >
       </Card>
      

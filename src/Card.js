@@ -11,6 +11,7 @@ export const Card = (props) => {
       <img  src={logo} alt="Avatar" style={{width:"100%" }} />
       <div className="container">
         <h4><b>{props.name}</b></h4> 
+        <input type="text" value={props.name} onChange={props.changeInput}/>
         <p>{props.title}</p> 
         <div>{props.children}</div>
         <div><button className="button2 button" onClick={props.changeName}>Change Name</button></div>
