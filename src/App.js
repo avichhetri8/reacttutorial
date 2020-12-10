@@ -4,8 +4,8 @@ import {useState} from 'react'
 function App() {
   const [name, setName] = useState("Abishek")
 
-  const ChangeNameHandler = () =>{
-    setName("Abishek G.C")
+  const ChangeNameHandler = (name) =>{
+    setName(name)
 
   }
 
@@ -19,8 +19,12 @@ function App() {
 
   return (
     <div >
-      <button className="button" onClick={ChangeNameHandler}>ChangeName</button>
-      <Card name={name} title="Engineer">
+      <button className="button" onClick={() => ChangeNameHandler("Abishek G.C")}>ChangeName</button>
+      <Card 
+        name={name} 
+        title="Engineer"
+        changeName={() => ChangeNameHandler("Avi")}
+        >
       </Card>
      
     </div>

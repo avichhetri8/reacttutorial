@@ -13,6 +13,7 @@ export const Card = (props) => {
         <h4><b>{props.name}</b></h4> 
         <p>{props.title}</p> 
         <div>{props.children}</div>
+        <div><button className="button2 button" onClick={props.changeName}>Change Name</button></div>
       </div>
     </div>
     )
