@@ -1,6 +1,13 @@
 import {Card} from './Card.js'
+import {useState} from 'react'
 
 function App() {
+  const [name, setName] = useState("Abishek")
+
+  const ChangeNameHandler = () =>{
+    setName("Abishek G.C")
+
+  }
 
   const buttonMark = (
     <div>
@@ -11,12 +18,11 @@ function App() {
   )
 
   return (
-    <div>
-      <Card name="Ramesh" title="Engineer">
-        {buttonMark}
+    <div >
+      <button className="button" onClick={ChangeNameHandler}>ChangeName</button>
+      <Card name={name} title="Engineer">
       </Card>
-      <Card name="Ram" title="doctor"/>
-      <Card/>
+     
     </div>
   );
 }
