@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 export const Card = (props) => {
+    console.log("",props)
     return (
         <div className="card">
             {console.log("p",props)}
