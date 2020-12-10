@@ -3,7 +3,16 @@ import {useState} from 'react'
 
 function App() {
   const [name, setName] = useState("Abishek")
+  
+  const [showCard, setShowCard] = useState(true)
 
+  const [cardButton, setcardButton] = useState("Hide")
+
+  const toggleShowCard = () =>{
+    showCard? setcardButton("Show") : setcardButton("Hide");
+    setShowCard(!showCard)
+    
+  }
   const ChangeNameHandler = (name) =>{
     setName(name)
 
@@ -11,7 +20,6 @@ function App() {
 
   const ChangeInputHandler = event => setName(event.target.value)
 
-  
   const buttonMark = (
     <div>
       
@@ -22,15 +30,16 @@ function App() {
 
   return (
     <div >
-      <button className="button" onClick={() => ChangeNameHandler("Abishek G.C")}>ChangeName</button>
-      <Card 
-        name={name} 
-        title="Engineer"
-        changeName={() => ChangeNameHandler("Avi")}
-        changeInput={ChangeInputHandler}
-        >
-      </Card>
-     
+      <button className="button" onClick={toggleShowCard}>{cardButton}</button>
+      {showCard &&
+        <Card 
+          name={name} 
+          title="Engineer"
+          changeName={() => ChangeNameHandler("Avi")}
+          changeInput={ChangeInputHandler}
+          >
+        </Card>
+      }     
     </div>
   );
 }
