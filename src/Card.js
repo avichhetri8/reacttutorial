@@ -8,13 +8,14 @@ export const Card = (props) => {
         <div className="card">
             {console.log("p",props)}
             
-      <img  src={logo} alt="Avatar" style={{width:"100%" }} />
+      <img  src={props.avatar} alt="Avatar" style={{width:"100%" }} />
       <div className="container">
         <h4><b>{props.name}</b></h4> 
-        <input type="text" value={props.name} onChange={props.changeInput}/>
+        <div><input type="text" onChange={props.onChange}/></div>
         <p>{props.title}</p> 
         <div>{props.children}</div>
-        <div><button className="button2 button" onClick={props.changeName}>Change Name</button></div>
+        
+        <div><button className="button-red button" onClick={props.onDelete}>Delete</button></div>
       </div>
     </div>
     )
